@@ -6,7 +6,7 @@ https://www.kaggle.com/datasets/thedevastator/analyzing-credit-card-spending-hab
 
 select * from credit_trnx
 
---- top 5 cities with max spend
+---1.top 5 cities with max spend
 select top 5 city, sum(amount) as total_spend
 from credit_trnx
 group by city
@@ -28,7 +28,7 @@ FROM cte1, total_spend
 ORDER BY cte1.total_spend DESC;
 
 ------------------------------------
--- highest spend month and amount spent in that month for each card type
+--2. highest spend month and amount spent in that month for each card type
 WITH cte AS (
   SELECT 
     card_type,
